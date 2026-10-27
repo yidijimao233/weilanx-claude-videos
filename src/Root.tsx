@@ -121,6 +121,7 @@ import {DURATION as EP27_DURATION} from './episodes/ep27-opus-video-full/cues';
 import {EP27_H, EP27_W, Ep27OpusVideoFull} from './episodes/ep27-opus-video-full/Ep27OpusVideoFull';
 import {Ep27CoverTall} from './episodes/ep27-opus-video-full/Cover';
 import {GILDED_DEMO_FRAMES, GildedDemo} from './library/previews/GildedDemo';
+import {GILDED_DIAGRAM_DEMO_FRAMES, GildedDiagramDemo} from './library/previews/GildedDiagramDemo';
 import {HALFTONE_DEMO_FRAMES, HalftoneDemo} from './library/previews/HalftoneDemo';
 import {BLACKGOLD_DEMO_FRAMES, BlackGoldDemo} from './library/previews/BlackGoldDemo';
 import {LAMPLIGHT_DEMO_FRAMES, LamplightDemo} from './library/previews/LamplightDemo';
@@ -230,6 +231,7 @@ export const Root: React.FC = () => (
     <Folder name="99-素材预览">
       <Composition id="library-wardrobe" component={Wardrobe} durationInFrames={150} fps={FPS} width={1080} height={1920} />
       <Composition id="library-gilded" component={GildedDemo} durationInFrames={GILDED_DEMO_FRAMES} fps={FPS} width={1920} height={1080} />
+      <Composition id="library-gilded-diagram" component={GildedDiagramDemo} durationInFrames={GILDED_DIAGRAM_DEMO_FRAMES} fps={FPS} width={1920} height={1080} />
       <Composition id="library-halftone" component={HalftoneDemo} durationInFrames={HALFTONE_DEMO_FRAMES} fps={FPS} width={1920} height={1080} />
       <Composition id="library-blackgold" component={BlackGoldDemo} durationInFrames={BLACKGOLD_DEMO_FRAMES} fps={FPS} width={1920} height={1080} />
       <Composition id="library-lamplight" component={LamplightDemo} durationInFrames={LAMPLIGHT_DEMO_FRAMES} fps={FPS} width={1920} height={1080} />

@@ -102,6 +102,19 @@ Studio 里的 `library-wardrobe`（矢量版全部配饰与表情）、`library-
 
 要点：所有元素都用 `soft` / `Soft` 柔入，不用弹跳；一场里最多一种朱红；图表的线要「画出来」（`pathLength={1}` + `strokeDasharray`）；场与场之间用模糊交叉淡化，硬切留给大段落。
 
+## 暗金图解风 `gilded-diagram/`
+
+暗金文献风的图解分支：象牙白线稿示意图 + 引线标注 + 选择题 + 样本方阵，金 = 看得见的、红虚线 = 看不见的；横屏 16:9、无口播。配方见 `styles/我的风格/暗金图解风/README.md`。预览：Studio 里的 `library-gilded-diagram`。底层（`GildedBg`、`Dust`、`Grain`、`YearHeader`、`RedStamp`、`drift`）直接用 `gilded/`。
+
+| 文件 | 内容 |
+|---|---|
+| `theme.ts` | 配色 `D`（象牙线稿、香槟金、标记红、玻璃卡、蓝图网格、夜景色）、字号层级 `DS`（片名 130 / 字幕 56 / 标注 40 / 小节 34）、`rise` 柔入 + 上浮、`draw` 描边进度、`tick` 倒计时、`champagneText` |
+| `stage.tsx` | `DCaption` 大字幕（`【金】` 渐变金、`〔红〕` 标记红）、`SectionTitle` 小节标题、`KickerCite` 带朱红导语的文献引用、`BlueprintGrid` 蓝图网格、`CornerFrame` 四角取景框、`FlashTitle` 闪白 → 光环 → 金粒子聚字的片名、`Counter` 左上计数抬头、`NightCity` 夜景楼群（`scroll` 下摇）、`Ridges` 群山剪影、`DotMap` 点阵地图 + 弧线航线 |
+| `props.tsx` | `LineArt` 线稿（任意路径，描边画出，`missing` 切红虚线）、`HitMark` 弹孔标记、`Callout` 引线标注（`idle` / `pick` / `reject` / `right`）、`CountRing` 倒计时圈、`NameCard` 人物名牌、`Tag` 小方签、`FrameStamp` 矩形红章、`ClaimCard` 成对卡片（`seen` 金玻璃 / `unseen` 红虚线）、`Checklist` 勾选清单、`Gauge` 竖向量表、`Ivory` 象牙剪影 |
+| `charts.tsx` | `IconGrid` 样本方阵（逐个出现，`missing` 下标闪红后变红虚线，`gone` 淡成空位）、`BigCount` 大数字计数、`FlowRow` 虚线流程图（节点 + 箭头 + 移动的小标记） |
+
+要点：红色只给「被排除 / 没进样本 / 看不见的」，而且一律配虚线；字幕用 56px 的 `DCaption`，不要用 gilded 的 42px `GCaption`；`FlashTitle` 那一帧踩配乐重拍，上一场要硬切掉（不要淡出，否则闪白会透出上一场）；绝对定位的 svg 放进居中容器时一定写 `left: 0, top: 0`。
+
 ## 网点档案风 `halftone/`
 
 横屏 16:9 的「审案」轻喜剧风格：米白旧纸 / 藏青夜色两种底、渐变网点、粗宋错版大字、案卷号和日期章、印章砸下、网点淹没转场，配方见 `styles/我的风格/网点档案风/README.md`。预览：Studio 里的 `library-halftone`（带声音：配乐由 `audio/episodes/library-halftone.mjs` 合成，`npm run audio` 会重建；音效表是 `HALFTONE_SFX`）。
